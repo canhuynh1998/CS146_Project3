@@ -27,7 +27,7 @@ public class BinarySearchDeluxe {
             int mid = lo + (hi - lo) / 2;
             int compare = comparator.compare(key, a[mid]);
             if (compare < 0) {
-                hi = mid - 1;   // find the first key in a[] if there are duplicates
+                hi = mid - 1;
             } else if (compare > 0) {
                 lo = mid + 1;
             } else {
@@ -58,7 +58,6 @@ public class BinarySearchDeluxe {
         while (lo <= hi) {
             int mid = lo + (hi - lo) / 2;
             int compare = comparator.compare(key, a[mid]);
-
             if (compare < 0) {
                 hi = mid - 1;
             } else if (compare > 0) {
