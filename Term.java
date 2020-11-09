@@ -63,7 +63,21 @@ public class Term implements Comparable<Term> {
         //Comparing each substring of v and w
         //in the range of [0, range)
         public int compare(Term v, Term w) {
-            return v.query.substring(0, range).compareTo(w.query.substring(0, range));
+            String temp1, temp2;
+            // Compare Term v with the range of each substring
+            if (v.query.length() < this.range) {
+                temp1 = v.query;
+            } else {
+                temp1 = v.query.substring(0, this.range);
+            }
+            // Compare Term w with the range of each substring
+            if (w.query.length() < this.range) {
+                temp2 = w.query;
+            } else {
+                temp2 = w.query.substring(0, this.range);
+            }
+            return temp1.compareTo(temp2);
+
         }
     }
 
